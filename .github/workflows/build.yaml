@@ -20,8 +20,5 @@ jobs:
     - name: Build the project
       run: dotnet build -c Release
 
-    - name: Upload artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: HTTPDebuggerKeygen
-        path: bin/Release/net9.0-windows/**
+    - name: Build the project
+      run: dotnet publish -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true
